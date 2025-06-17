@@ -1,0 +1,12 @@
+# Gradio UI
+gradio
+
+# Model inference
+torch
+transformers
+accelerate
+safetensors
+tiktoken 
+protobuf
+blobfile
+sentencepiece
