@@ -28,49 +28,66 @@ MODEL_IDS = {
 PROMPT_TEMPLATES = {
     "correct_spelling": (
         "Please correct all spelling mistakes—both standard and typographical—in the following Arabic text:\n\n"
-        "{text}"
+        "{text}\n\n"
+        "Respond with only the corrected sentence, without any additional explanation."
     ),
     "Grammar_output": (
         "Correct errors in sentence structure, agreement, and syntax in the following Arabic text:\n\n"
-        "{text}"
+        "{text}\n\n"
+        "Respond with only the corrected sentence, without any additional explanation."
     ),
     "morphology_output": (
         "Analyze word formation and derivation errors and correct them in the following text:\n\n"
-        "{text}"
+        "{text}\n\n"
+        "Respond with only the corrected sentence, without any additional explanation."
     ),
     "linguistic_output": (
         "Detect semantic or contextual errors in the following text and correct them:\n\n"
-        "{text}"
+        "{text}\n\n"
+        "Respond with only the corrected sentence, without any additional explanation."
     ),
     "correct_stylistic": (
         "Improve phrasing and writing style for the following Arabic text:\n\n"
-        "{text}"
+        "{text}\n\n"
+        "Respond with only the improved sentence, without any additional explanation."
     ),
     "format_output": (
         "Fix punctuation, spacing, and layout issues in the following Arabic text for better readability:\n\n"
-        "{text}"
+        "{text}\n\n"
+        "Respond with only the formatted sentence, without any additional explanation."
     ),
     "namedentity": (
         "Ensure proper spelling and usage of names and entities in the following Arabic text:\n\n"
-        "{text}"
+        "{text}\n\n"
+        "Respond with only the corrected sentence, without any additional explanation."
     ),
     "Quranicquotation_output": (
         "Verify and correct any Quranic quotations in the following Arabic text for accuracy and formatting:\n\n"
-        "{text}"
+        "{text}\n\n"
+        "Respond with only the corrected quotation, without any additional explanation."
     ),
     "diacritics_output": (
-        "Add full or partial Arabic diacritical marks to improve pronunciation and clarity in the following text:\n\n"
-        "{text}"
+        "Add full Arabic diacritical marks to improve pronunciation and clarity in the following text:\n\n"
+        "{text}\n\n"
+        "Respond with only the text with diacritics added, without any additional explanation."
     ),
     "correct_rewriting": (
         "Rewrite the following Arabic text to improve clarity, flow, and style while preserving meaning:\n\n"
-        "{text}"
+        "{text}\n\n"
+        "Respond with only the rewritten sentence, without any additional explanation."
     ),
     "errorexplain_corrected": (
-        "Identify and correct all errors in the following Arabic text:\n\n"
-        "{text}"
+        "Identify and correct all errors in the following Arabic text and provide only the corrected sentence:\n\n"
+        "{text}\n\n"
+        "Respond with only the corrected sentence, without any additional explanation."
+    ),
+    "format_output": (
+        "Fix punctuation, spacing, and layout issues in the following Arabic text for better readability:\n\n"
+        "{text}\n\n"
+        "Respond with only the formatted sentence, without any additional explanation."
     ),
 }
+
 
 # 4) Caches for tokenizers and models
 tokenizers = {}
@@ -205,5 +222,10 @@ with gr.Blocks() as demo:
         outputs=output_box
     )
 
+
 if __name__ == "__main__":
-    demo.launch()
+    print("🚀 Starting Gradio on 0.0.0.0:7867")
+    # demo.launch(server_name="0.0.0.0", server_port=7868, debug=True)
+    demo.launch(server_name="0.0.0.0", server_port=7872, debug=True, show_error=True,share=True)
+
+ 
